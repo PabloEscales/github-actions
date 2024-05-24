@@ -29,10 +29,10 @@ jobs:
 
           echo "This is the value for project version: ${{ vars.PROJECT_VERSION }}"
 
-      - name: "Show the values when the user is right"
-        if: ${{ secrets.USERNAME != '' && secrets.PASS != '' }} 
-        run: |
-          echo "Correct user ✅"
+      # - name: "Show the values when the user is right"
+      #   if: ${{ secrets.USERNAME != '' && secrets.PASS != '' }} 
+      #   run: |
+      #     echo "Correct user ✅"
       
       - name: "Show variables by default"
         run: |
