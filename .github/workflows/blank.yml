@@ -32,7 +32,7 @@ jobs:
           echo "This is the value for password: ${{ env.password }}"
 
       - name: "Show the values when the user is right"
-        if: ${{ env.username != '' && env.password != '' }}
+        if: ${{ env.username == 'biyo' && env.password == 'biyo123' }}
         run: |
           echo "Correct user ✅"
       
