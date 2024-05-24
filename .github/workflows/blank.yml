@@ -10,8 +10,8 @@ jobs:
       platform: gcp
       region: us-east-1
       account: 123456789
-      username: ${{ secrets.USERNAME }}
-      password: ${{ secrets.PASS }}
+      #username: ${{ secrets.USERNAME }}
+      #password: ${{ secrets.PASS }}
       
     runs-on: ubuntu-latest
 
@@ -26,8 +26,8 @@ jobs:
           echo "This is the value for region: ${{ env.region }}"
           echo "This is the value for account: ${{ env.account }}"
 
-          echo "This is the value for username: ${{ env.username }}"
-          echo "This is the value for password: ${{ env.password }}"
+          echo "This is the value for username: ${{ env.USERNAME }}"
+          echo "This is the value for password: ${{ env.PASS }}"
 
           echo "This is the value for project version: ${{ vars.PROJECT_VERSION }}"
 
