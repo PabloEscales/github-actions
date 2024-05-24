@@ -9,17 +9,25 @@ on:
 jobs:
   build:
     env:
-      platform: aws
+      platform: gcp
       region: us-east-1
-      account: 123456566
+      account: 123456789
       
     runs-on: ubuntu-latest
 
     steps:
       - name: "Show message"
         run: echo "Hello world"
+
       - name: "Show ENV variables"
+        if: ${{ env.platform == 'gcp' }}
         run: |
           echo "This is the value for cloud provider: ${{ env.platform }}"
           echo "This is the value for region: ${{ env.region }}"
           echo "This is the value for account: ${{ env.account }}"
+      
+      - name: "Show variables by default"
+        run: |
+          echo "Event: ${{toJSON(github.event)}}"
+          echo "Github_ACTOR: $GITHUB_ACTOR"
+          echo "Github_ACTOR: $GITHUB_REPOSITORY"
