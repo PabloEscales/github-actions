@@ -30,6 +30,11 @@ jobs:
 
           echo "This is the value for username: ${{ env.username }}"
           echo "This is the value for password: ${{ env.password }}"
+
+      - name: "Show the values when the user is right"
+        if: ${{ env.username != '' && env.password != '' }}
+        run: |
+          echo "Correct user ✅"
       
       - name: "Show variables by default"
         run: |
