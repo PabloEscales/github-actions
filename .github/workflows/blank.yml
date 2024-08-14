@@ -41,3 +41,15 @@ jobs:
           echo "Event: ${{toJSON(github.event)}}"
           echo "Github_ACTOR: $GITHUB_ACTOR"
           echo "Github_ACTOR: $GITHUB_REPOSITORY"
+
+  print-variable:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: "Show message"
+        run: echo "Testing..."
+
+      - name: "Show variables again "
+        run: |
+          echo "This is the value for project version: ${{ vars.PROJECT_VERSION }}"
